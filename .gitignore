@@ -1,0 +1,11 @@
+# Büyük / yeniden üretilebilir veri (run_all.py ile tekrar oluşturulur)
+data/raw/
+data/arxiv_raw.jsonl
+data/*.npy
+data/*.npz
+
+# Python / Numba önbellekleri
+__pycache__/
+*.pyc
+*.nbi
+*.nbc

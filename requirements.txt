@@ -1,0 +1,29 @@
+# YZM 513 Project 1: High-Performance Similarity Search Engine
+# Kurulum: py -3.14 -m pip install -r requirements.txt
+# Test edilen ortam: Windows 11, Python 3.14, CPU (GPU yok)
+
+# Bilimsel hesaplama
+numpy>=2.0
+scipy>=1.11.0
+scikit-learn>=1.5.0
+matplotlib>=3.7.0
+
+# Veri seti / embedding (embedding süresi benchmark'a dahil değil)
+sentence-transformers>=3.0
+torch>=2.2
+transformers>=4.40
+
+# Profiling (Phase 1)
+line_profiler>=4.0.0
+
+# JIT (Phase 2)
+numba>=0.60.0
+
+# Paralellik (Phase 3)
+threadpoolctl>=3.1
+dask>=2024.1.0
+ray>=2.9.0
+psutil>=5.9.0
+
+# Rapor (PDF)
+reportlab>=4.0

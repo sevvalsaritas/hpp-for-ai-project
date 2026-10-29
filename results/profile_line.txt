@@ -1,0 +1,63 @@
+Timer unit: 0.001 s
+
+Total time: 424.935 s
+File: C:\Users\svvlc\OneDrive\Desktop\project-hpp\phase1_baseline\naive_search.py
+Function: cosine_similarity_python at line 25
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    25                                           def cosine_similarity_python(a, b):
+    26                                               """
+    27                                               İki vektörün cosine benzerliğini SAF Python ile hesaplar (NumPy yok).
+    28                                           
+    29                                               Bilinçli verimsizlikler (profilde göreceğimiz):
+    30                                                 - Her çağrıda HEM sorgunun HEM dokümanın normu yeniden hesaplanıyor.
+    31                                                   Sorgu normu 19.671 kez, her doküman normu 100 kez boşa hesaplanır.
+    32                                                 - Döngünün her adımı yorumlayıcıda ~10 bytecode: indeksleme, çarpma,
+    33                                                   toplama, yeni float nesnesi oluşturma... SIMD/vektör birimi kullanılmaz.
+    34                                               Kavram: GIL + yorumlayıcı yükü -> CPU'nun teorik FLOP kapasitesinin ~%0.1'i.
+    35                                               """
+    36   1967100        305.5      0.0      0.1      dot = 0.0
+    37   1967100        270.0      0.0      0.1      norm_a = 0.0
+    38   1967100        238.2      0.0      0.1      norm_b = 0.0
+    39 757333500     102095.9      0.0     24.0      for i in range(len(a)):          # 384 adımlık iç döngü: zamanın büyük kısmı burada
+    40 755366400     108162.7      0.0     25.5          dot += a[i] * b[i]
+    41 755366400     102105.1      0.0     24.0          norm_a += a[i] * a[i]
+    42 755366400     110879.2      0.0     26.1          norm_b += b[i] * b[i]
+    43   1967100        307.2      0.0      0.1      if norm_a == 0.0 or norm_b == 0.0:   # sıfır vektörde 0'a bölmeyi engelle
+    44                                                   return 0.0
+    45   1967100        571.2      0.0      0.1      return dot / (math.sqrt(norm_a) * math.sqrt(norm_b))
+
+Total time: 555.811 s
+File: C:\Users\svvlc\OneDrive\Desktop\project-hpp\phase1_baseline\naive_search.py
+Function: search_naive at line 48
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    48                                           def search_naive(queries, corpus, k=TOP_K):
+    49                                               """
+    50                                               Her sorgu için korpustaki en benzer k dokümanı bulur (hocanın iskeleti).
+    51                                           
+    52                                               Karmaşıklık: O(Q * N * d) benzerlik + O(Q * N log N) sıralama.
+    53                                               Sıralama: k=5 için 19.671 elemanın TAMAMINI sıralamak gereksiz; ayrıca
+    54                                               key=lambda her karşılaştırmada bir Python fonksiyon çağrısı demek.
+    55                                           
+    56                                               Args:
+    57                                                   queries: list of lists -- sorgu vektörleri
+    58                                                   corpus:  list of lists -- doküman vektörleri
+    59                                               Returns:
+    60                                                   her sorgu için [(doc_index, similarity_score), ...] (azalan skor)
+    61                                               """
+    62         1          0.0      0.0      0.0      results = []
+    63       101          0.1      0.0      0.0      for q_idx, query in enumerate(queries):
+    64       100         84.9      0.8      0.0          scores = []
+    65   1967200        355.0      0.0      0.1          for d_idx, doc in enumerate(corpus):
+    66   1967100     554351.1      0.3     99.7              sim = cosine_similarity_python(query, doc)
+    67   1967100        436.5      0.0      0.1              scores.append((d_idx, sim))           # her skor için yeni bir tuple nesnesi
+    68                                           
+    69                                                   # Skora göre azalan sırala, ilk k'yı al (tam sıralama: O(N log N))
+    70       100        583.2      5.8      0.1          scores.sort(key=lambda x: x[1], reverse=True)
+    71       100          0.2      0.0      0.0          results.append(scores[:k])
+    72                                           
+    73         1          0.0      0.0      0.0      return results
+

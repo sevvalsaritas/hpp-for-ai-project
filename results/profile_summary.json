@@ -1,0 +1,169 @@
+{
+  "n_queries": 100,
+  "n_docs": 19671,
+  "cprofile_top": [
+    {
+      "function": "cosine_similarity_python()",
+      "ncalls": 1967100,
+      "tottime": 47.4493676,
+      "cumtime": 47.8825135
+    },
+    {
+      "function": "search_naive()",
+      "ncalls": 1,
+      "tottime": 0.6706956000000001,
+      "cumtime": 49.2764174
+    },
+    {
+      "function": "<method 'sort' of 'list' objects>",
+      "ncalls": 100,
+      "tottime": 0.44217920000000005,
+      "cumtime": 0.5781120000000001
+    },
+    {
+      "function": "<built-in method math.sqrt>",
+      "ncalls": 3934200,
+      "tottime": 0.31795280000000004,
+      "cumtime": 0.31795280000000004
+    },
+    {
+      "function": "<method 'append' of 'list' objects>",
+      "ncalls": 1967200,
+      "tottime": 0.1450963,
+      "cumtime": 0.1450963
+    },
+    {
+      "function": "<lambda>",
+      "ncalls": 1967100,
+      "tottime": 0.13593280000000002,
+      "cumtime": 0.13593280000000002
+    },
+    {
+      "function": "<built-in method builtins.len>",
+      "ncalls": 1967100,
+      "tottime": 0.1151931,
+      "cumtime": 0.1151931
+    },
+    {
+      "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+      "ncalls": 1,
+      "tottime": 3.3600000000000004e-05,
+      "cumtime": 3.3600000000000004e-05
+    }
+  ],
+  "cprofile_total_s": 49.276451,
+  "line_profile": {
+    "cosine_similarity_python": [
+      {
+        "line": 36,
+        "hits": 1967100,
+        "time_s": 0.3054693,
+        "code": "dot = 0.0"
+      },
+      {
+        "line": 37,
+        "hits": 1967100,
+        "time_s": 0.2699757,
+        "code": "norm_a = 0.0"
+      },
+      {
+        "line": 38,
+        "hits": 1967100,
+        "time_s": 0.23823049999999998,
+        "code": "norm_b = 0.0"
+      },
+      {
+        "line": 39,
+        "hits": 757333500,
+        "time_s": 102.09587599999999,
+        "code": "for i in range(len(a)):"
+      },
+      {
+        "line": 40,
+        "hits": 755366400,
+        "time_s": 108.1627197,
+        "code": "dot += a[i] * b[i]"
+      },
+      {
+        "line": 41,
+        "hits": 755366400,
+        "time_s": 102.1050716,
+        "code": "norm_a += a[i] * a[i]"
+      },
+      {
+        "line": 42,
+        "hits": 755366400,
+        "time_s": 110.87917189999999,
+        "code": "norm_b += b[i] * b[i]"
+      },
+      {
+        "line": 43,
+        "hits": 1967100,
+        "time_s": 0.3072026,
+        "code": "if norm_a == 0.0 or norm_b == 0.0:"
+      },
+      {
+        "line": 45,
+        "hits": 1967100,
+        "time_s": 0.5712193999999999,
+        "code": "return dot / (math.sqrt(norm_a) * math.sqrt(norm_b))"
+      }
+    ],
+    "search_naive": [
+      {
+        "line": 62,
+        "hits": 1,
+        "time_s": 6e-07,
+        "code": "results = []"
+      },
+      {
+        "line": 63,
+        "hits": 101,
+        "time_s": 0.00011439999999999999,
+        "code": "for q_idx, query in enumerate(queries):"
+      },
+      {
+        "line": 64,
+        "hits": 100,
+        "time_s": 0.0848514,
+        "code": "scores = []"
+      },
+      {
+        "line": 65,
+        "hits": 1967200,
+        "time_s": 0.3549904,
+        "code": "for d_idx, doc in enumerate(corpus):"
+      },
+      {
+        "line": 66,
+        "hits": 1967100,
+        "time_s": 554.3511313,
+        "code": "sim = cosine_similarity_python(query, doc)"
+      },
+      {
+        "line": 67,
+        "hits": 1967100,
+        "time_s": 0.43646589999999996,
+        "code": "scores.append((d_idx, sim))"
+      },
+      {
+        "line": 70,
+        "hits": 100,
+        "time_s": 0.5831763999999999,
+        "code": "scores.sort(key=lambda x: x[1], reverse=True)"
+      },
+      {
+        "line": 71,
+        "hits": 100,
+        "time_s": 0.00022669999999999998,
+        "code": "results.append(scores[:k])"
+      },
+      {
+        "line": 73,
+        "hits": 1,
+        "time_s": 3e-07,
+        "code": "return results"
+      }
+    ]
+  }
+}

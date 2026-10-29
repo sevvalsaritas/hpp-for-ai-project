@@ -1,0 +1,15 @@
+         11802802 function calls in 49.276 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  1967100   47.449    0.000   47.883    0.000 C:\Users\svvlc\OneDrive\Desktop\project-hpp\phase1_baseline\naive_search.py:25(cosine_similarity_python)
+        1    0.671    0.671   49.276   49.276 C:\Users\svvlc\OneDrive\Desktop\project-hpp\phase1_baseline\naive_search.py:48(search_naive)
+      100    0.442    0.004    0.578    0.006 {method 'sort' of 'list' objects}
+  3934200    0.318    0.000    0.318    0.000 {built-in method math.sqrt}
+  1967200    0.145    0.000    0.145    0.000 {method 'append' of 'list' objects}
+  1967100    0.136    0.000    0.136    0.000 C:\Users\svvlc\OneDrive\Desktop\project-hpp\phase1_baseline\naive_search.py:70(<lambda>)
+  1967100    0.115    0.000    0.115    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+

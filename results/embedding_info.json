@@ -1,0 +1,12 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dim": 384,
+  "max_seq_length": 256,
+  "n_corpus": 19671,
+  "n_queries": 100,
+  "embedding_time_s_not_benchmarked": 304.5446037000511,
+  "tfidf_vocab": 25528,
+  "tfidf_nnz": 1855865,
+  "tfidf_density": 0.0036957548189178614,
+  "tfidf_avg_nnz_per_doc": 94.34522901733516
+}

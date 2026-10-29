@@ -1,0 +1,48 @@
+{
+  "threads": 8,
+  "peak_gflops": 648.7302531044822,
+  "bandwidth_gbs": 70.13748824185387,
+  "ridge_point": 9.249408117774008,
+  "points": [
+    {
+      "label": "BLAS q=1 (tek sorgu)",
+      "ai": 0.49867601372588555,
+      "gflops": 35.6809757163542,
+      "key": "blas",
+      "roof_gflops": 34.97588304919386,
+      "pct_of_roof": 102.01593957232936
+    },
+    {
+      "label": "BLAS q=100",
+      "ai": 39.51006594300506,
+      "gflops": 249.54703592231616,
+      "key": "blas",
+      "roof_gflops": 648.7302531044822,
+      "pct_of_roof": 38.466995292437055
+    },
+    {
+      "label": "BLAS q=2000",
+      "ai": 158.4784585591238,
+      "gflops": 356.5992682541765,
+      "key": "blas",
+      "roof_gflops": 648.7302531044822,
+      "pct_of_roof": 54.9688050692379
+    },
+    {
+      "label": "Numba fused q=100",
+      "ai": 39.51006594300506,
+      "gflops": 58.685872170095834,
+      "key": "numba_parallel",
+      "roof_gflops": 648.7302531044822,
+      "pct_of_roof": 9.046267210332195
+    },
+    {
+      "label": "Naive saf Python",
+      "ai": 39.51006594300506,
+      "gflops": 0.03163709371148463,
+      "key": "python",
+      "roof_gflops": 648.7302531044822,
+      "pct_of_roof": 0.004876771749133962
+    }
+  ]
+}

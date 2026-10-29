@@ -1,0 +1,28 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.3",
+  "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+  "logical_cores": 16,
+  "numpy": "2.4.4",
+  "ram_gb": 31.4,
+  "physical_cores": 16,
+  "scipy": "1.17.1",
+  "sklearn": "1.8.0",
+  "numba": "0.65.1",
+  "dask": "2026.8.0",
+  "ray": "2.59.0",
+  "blas": [
+    [
+      "openblas",
+      16
+    ],
+    [
+      "openmp",
+      16
+    ],
+    [
+      "openblas",
+      16
+    ]
+  ]
+}

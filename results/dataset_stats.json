@@ -1,0 +1,117 @@
+{
+  "kaynak": "arXiv API (export.arxiv.org/api/query), kategoriler cs.AI / cs.CL / cs.LG, 2025-01 .. 2026-10",
+  "n_corpus": 19671,
+  "n_queries": 100,
+  "preprocessing_steps": [
+    {
+      "adim": "ham kayit (API)",
+      "kalan": 19800
+    },
+    {
+      "adim": "tekillestirme (arXiv id)",
+      "kalan": 19800
+    },
+    {
+      "adim": "tarih filtresi (2025-2026)",
+      "kalan": 19800
+    },
+    {
+      "adim": "uzunluk filtresi (>= 50 kelime)",
+      "kalan": 19771
+    },
+    {
+      "adim": "sorgu ayirma (100 makale korpustan cikarildi)",
+      "kalan": 19671
+    }
+  ],
+  "abstract_words": {
+    "mean": 180.49595851761475,
+    "median": 180.0,
+    "min": 51,
+    "max": 336,
+    "std": 42.62489739968528
+  },
+  "abstract_wordpiece_tokens": {
+    "mean": 264.0053886431803,
+    "median": 261.0,
+    "min": 58,
+    "max": 582,
+    "frac_truncated_over_256": 0.5284428854659143
+  },
+  "query_words": {
+    "mean": 10.14,
+    "min": 3,
+    "max": 22
+  },
+  "months": {
+    "2025-01": 892,
+    "2025-02": 896,
+    "2025-03": 896,
+    "2025-04": 893,
+    "2025-05": 898,
+    "2025-06": 893,
+    "2025-07": 895,
+    "2025-08": 894,
+    "2025-09": 893,
+    "2025-10": 892,
+    "2025-11": 895,
+    "2025-12": 893,
+    "2026-01": 897,
+    "2026-02": 894,
+    "2026-03": 892,
+    "2026-04": 891,
+    "2026-05": 894,
+    "2026-06": 893,
+    "2026-07": 890,
+    "2026-08": 898,
+    "2026-09": 893,
+    "2026-10": 899
+  },
+  "primary_category_top10": {
+    "cs.LG": 5967,
+    "cs.CL": 3683,
+    "cs.AI": 2692,
+    "cs.CV": 1929,
+    "cs.CR": 582,
+    "cs.RO": 518,
+    "stat.ML": 497,
+    "cs.SE": 371,
+    "cs.IR": 297,
+    "cs.HC": 259
+  },
+  "target_category_coverage": {
+    "cs.CL": 5242,
+    "cs.AI": 10784,
+    "cs.LG": 10356
+  },
+  "samples_corpus": [
+    {
+      "id": "2609.38923",
+      "title": "GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis",
+      "published": "2026-09-30T04:07:17Z",
+      "primary_category": "cs.CL",
+      "abstract": "Working agents need to read diverse files, coordinate tools, and produce deliverables. Training such agents requires tasks built on many real files with verifiable results, but few pipelines exist to synthesize this kind of data. Existing pipelines either generate files with models, which lack realism and diversity, or build tasks on real files without task-specific verifiers, leaving result quali..."
+    },
+    {
+      "id": "2508.20953",
+      "title": "A Multi-Objective Genetic Algorithm for Healthcare Workforce Scheduling",
+      "published": "2025-08-28T16:16:10Z",
+      "primary_category": "cs.AI",
+      "abstract": "Workforce scheduling in the healthcare sector is a significant operational challenge, characterized by fluctuating patient loads, diverse clinical skills, and the critical need to control labor costs while upholding high standards of patient care. This problem is inherently multi-objective, demanding a delicate balance between competing goals: minimizing payroll, ensuring adequate staffing for pat..."
+    },
+    {
+      "id": "2501.17260",
+      "title": "ViT-2SPN: Vision Transformer-based Dual-Stream Self-Supervised Pretraining Networks for Retinal OCT Classification",
+      "published": "2025-01-28T19:41:38Z",
+      "primary_category": "cs.CV",
+      "abstract": "Optical Coherence Tomography (OCT) is a non-invasive imaging modality essential for diagnosing various eye diseases. Despite its clinical significance, developing OCT-based diagnostic tools faces challenges, such as limited public datasets, sparse annotations, and privacy concerns. Although deep learning has made progress in automating OCT analysis, these challenges remain unresolved. To address t..."
+    }
+  ],
+  "samples_queries": [
+    "Piecing Together Cross-Document Coreference Resolution Datasets: Systematic Dataset Analysis and Unification",
+    "DiRe-RAPIDS: Topology-faithful dimensionality reduction at scale",
+    "Lita: Light Agent Uncovers the Agentic Coding Capabilities of LLMs",
+    "A Comprehensive Benchmark for RNA 3D Structure-Function Modeling",
+    "Graph Neural Networks in Wind Power Forecasting"
+  ]
+}
