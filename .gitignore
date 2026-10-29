@@ -4,6 +4,9 @@ data/arxiv_raw.jsonl
 data/*.npy
 data/*.npz
 
+# Hocanın ödev metni: yerelde kalır, herkese açık repoya konmaz
+proje-aciklamasi.md
+
 # Python / Numba önbellekleri
 __pycache__/
 *.pyc
