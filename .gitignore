@@ -6,6 +6,8 @@ data/*.npz
 
 # Hocanın ödev metni: yerelde kalır, herkese açık repoya konmaz
 proje-aciklamasi.md
+# PDF rapor ve üreticisi: ayrıca teslim edilir, repoda tutulmaz
+report/
 
 # Python / Numba önbellekleri
 __pycache__/

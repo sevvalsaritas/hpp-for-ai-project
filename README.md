@@ -5,7 +5,8 @@ Kod deposu: https://github.com/sevvalsaritas/hpp-for-ai-project
 
 arXiv'deki 2025-2026 cs.AI / cs.CL / cs.LG özetlerinden oluşan ~20K dokümanlık bir korpusta
 top-5 anlamsal benzerlik araması. Hocanın starter kodu üzerine inşa edildi: saf Python baseline →
-profil → BLAS / Numba → paralellik → final sistem. Rapor: [`report/rapor.pdf`](report/rapor.pdf).
+profil → BLAS / Numba → paralellik → final sistem. PDF rapor ayrıca teslim edilmiştir; tüm
+figürler `figures/`, ham ölçümler `results/` altındadır.
 
 ## Kurulum
 
@@ -29,7 +30,7 @@ aynı olduğunu doğrular.
 ## Her şeyi yeniden üretme
 
 ```powershell
-py -3.14 run_all.py               # veri -> tüm benchmark'lar -> figürler -> PDF rapor
+py -3.14 run_all.py               # veri -> tüm benchmark'lar -> figürler
 py -3.14 run_all.py --skip-data   # veri hazırsa
 py -3.14 run_all.py --only phase3 # tek bir adım
 ```
@@ -48,7 +49,6 @@ Adımlar ve yaklaşık süreler (Core Ultra 7 255H):
 | Phase 3: paralellik | `phase3_parallelism/run_phase3.py` | Şekil 5 |
 | Phase 4: final, ölçekleme, doğruluk | `phase4_final/run_phase4.py` | Şekil 6, 7 |
 | Bonus: ANN, roofline | `bonus/ann_compare.py`, `bonus/roofline.py` | Ek A, B |
-| Rapor | `report/build_report.py` | `report/rapor.pdf` |
 
 Arama süreleri gürültüye duyarlıdır. Ölçüm sırasında laptop şarja takılı olsun ve ağır uygulamaları
 kapatın.
@@ -68,7 +68,6 @@ bonus/                  kendi LSH ve IVF uygulamalarımız, roofline
 demo.py                 canlı demo
 results/                ham benchmark verisi (CSV/JSON, tüm tekrarlar)
 figures/                rapor figürleri (kodla üretilir)
-report/                 PDF rapor üreticisi ve rapor
 ```
 
 ## Benchmark kuralları

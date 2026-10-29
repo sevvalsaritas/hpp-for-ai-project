@@ -49,6 +49,10 @@ def main():
             continue
         if args.skip_data and is_data:
             continue
+        # Rapor üreticisi repoda yok (ayrıca teslim edilir): script yoksa adımı atla, hata verme.
+        if cmd[0].endswith(".py") and not (ROOT / cmd[0]).exists():
+            print(f"\n>>> {name}: {cmd[0]} bulunamadı, adım atlandı")
+            continue
         print(f"\n{'=' * 70}\n>>> {name}: {' '.join(cmd)}\n{'=' * 70}", flush=True)
         t0 = time.perf_counter()
         r = subprocess.run([sys.executable, *cmd], cwd=ROOT, env=env)
